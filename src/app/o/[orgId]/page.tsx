@@ -14,6 +14,7 @@ import {
 } from "@/queries";
 import type { Organization, Member } from "@/types";
 import Image from "next/image";
+import { toast } from "sonner";
 
 export default function OrganizationPage({ params }: { params: Promise<{ orgId: string }> }) {
   const [orgId, setOrgId] = useState<string | null>(null);
@@ -126,6 +127,36 @@ function OrganizationPageClient({ orgId }: { orgId: string }) {
         </div>
         <Button onClick={() => setEditing(!editing)}>
           {editing ? "Cancel" : "Edit Organization"}
+        </Button>
+      </div>
+
+      {/* Navigation Tabs */}
+      <div className="flex gap-4 mb-6 border-b">
+        <Button
+          variant="ghost"
+          className="border-b-2 border-blue-500 rounded-none"
+        >
+          Overview
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => window.location.href = `/o/${orgId}/rooms`}
+        >
+          Meeting Rooms
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => window.location.href = `/o/${orgId}/projects`}
+        >
+          Projects
+        </Button>
+        <Button
+          variant="ghost"
+          onClick={() => {
+            toast.info("Documents coming soon!");
+          }}
+        >
+          Documents
         </Button>
       </div>
 

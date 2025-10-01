@@ -68,6 +68,3 @@ export const config = {
     "/((?!api/auth|_next|static|public).*)",
   ],
 };
-
-
-

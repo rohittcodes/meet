@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navigation } from "@/components/navigation";
 import { QueryProvider } from "@/lib/query-client";
 import { Toaster } from "sonner";
+import '@livekit/components-styles';
+import '@livekit/components-styles/prefabs';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

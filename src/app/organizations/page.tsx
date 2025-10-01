@@ -171,7 +171,6 @@ export default function OrganizationsPage() {
           </Card>
         ))}
       </div>
-
       {organizations.length === 0 && !showCreateForm && (
         <Card>
           <CardContent className="text-center py-8">
